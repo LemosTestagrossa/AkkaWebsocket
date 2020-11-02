@@ -46,11 +46,11 @@ bash demo/1/node1.sh
 ```
 console [3]
 ```bash 
-bash node demo/1/js/subscriber.js CocaCola ReportsOfApril2020
+node demo/1/js/subscriber.js CocaCola ReportsOfApril2020
 ```
 console [4]
 ```bash 
-bash node demo/1/js/producer.js CocaCola ReportsOfApril2020
+node demo/1/js/producer.js CocaCola ReportsOfApril2020
 ```
 
 ![](https://i.imgur.com/c0vVHAw.png)
@@ -70,14 +70,14 @@ bash demo/1/node1.sh
 ```
 console [3]
 ```bash 
-bash node demo/1/js/producer.js CocaCola ReportsOfApril2020
+node demo/1/js/producer.js CocaCola ReportsOfApril2020
 ```
 
 Now try this:
 
 console [4]
 ```bash 
-bash node demo/1/js/producer.js Pepsico ReportsOfApril2020
+node demo/1/js/producer.js Pepsico ReportsOfApril2020
 ```
 
 It should not show results, because it is subscribed to another company, another document.
@@ -88,7 +88,7 @@ Now let's create a stream for the url consumed at console [4]
 
 console [5]
 ```bash 
-bash node demo/1/js/producer.js Pepsico ReportsOfApril2020
+node demo/1/js/producer.js Pepsico ReportsOfApril2020
 ```
 
 Now you should see results at console [4]
