@@ -1,7 +1,7 @@
 # Idea
-To receive via websocket a CSV document, split it, and distribute the processing of each line between 10 workers per node.
+To **receive** via websocket a CSV document, split it, and distribute the processing of each line between 10 workers per node.
 
-To send via websocket an ACK message each time a worker finish processing the line it was given to.
+To **send** via websocket an ACK message each time a worker finish processing the line it was given to.
 
 # Implementation
 We used Play because it is nicer than Akka HTTP.
@@ -11,19 +11,20 @@ We used Akka Cluster because we needed Distributed PubSub.
 We used Distributed PubSub because we needed to coordinate the workers with ease.
 
 # Demo
-Imagine you have two companies, CocaCola and Pepsico.
+Imagine you have two companies, _CocaCola_ and _Pepsico_. Both want to use your SaaS platform:
 
-Both want to use your SaaS platform.
+- They are going to be sending CSV files via websocket
+- They expect that each line of the CSV will trigger some task which is going to take between 1 second _and an hour_ to compute.
 
-They are going to be sending CSV files via websocket, and expect for each line to take between 1 second and an hour to compute.
-
-Imagine that the lines of the CSV files trigger some heavy computation.
 
 Because of this, each company wants so know in real-time when each lines has been processed. 
-But they do not want to know about the other company real-time events.
-So we should segregate the streams both company-wise and document-wise.
 
-Finally the documents may have a revisionId attribute which would allow you to reject them if you have already processed them before.
+But they do not want to know about the other company real-time events.
+
+So. We are going to segregate the streams both _company-wise_ and _document-wise_.
+
+_last comment_
+The documents may have a revisionId attribute which would allow you to reject them if you have already processed them before.
 
 Best of luck. 
   
