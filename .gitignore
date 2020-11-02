@@ -1,2 +1,11 @@
-*.class
-*.log
+logs
+target
+.g8
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+
+node_modules
